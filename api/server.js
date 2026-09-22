@@ -3,6 +3,10 @@ const pool = require("./db");
 
 const app = express();
 
+const authRoutes = require("./routes/auth");
+app.use(express.json());
+app.use("/api/auth", authRoutes);
+
 app.use(express.json());
 
 app.get("/api/health", (req, res) => {
